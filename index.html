@@ -4,16 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EASYZEND NG</title>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    <div id="app">Data page</div>
+    <div id="app">{{ message }}</div>
 
-    <script type="module">
-        import { createApp } from 'vue'
-        import MyComponent from './my-component.js'
-      
-        createApp(MyComponent).mount('#app')
-      </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="component.js"></script>
 </body>
 </html>
