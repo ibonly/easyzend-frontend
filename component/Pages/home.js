@@ -4,6 +4,7 @@ import SettingsComponent from './setting.js';
 import ProfileComponent from './profile.js';
 import TransactionListComponent from './transaction.js';
 import NotificationComponent from './notification.js';
+import SuccessComponent from './success.js';
 
 const template = `
   <div class="app">
@@ -44,7 +45,8 @@ export default {
     TransactionListComponent,
     SettingsComponent,
     ProfileComponent,
-    NotificationComponent
+    NotificationComponent,
+    SuccessComponent
   },
   data() {
     return {
@@ -71,7 +73,7 @@ export default {
       alert(`Requesting $${this.amount}`);
     },
     payMoney() {
-      alert(`Paying $${this.amount}`);
+      this.changePage('success');
     },
     changePage(page) {
       this.currentPage = page;

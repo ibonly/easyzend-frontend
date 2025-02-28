@@ -1,18 +1,20 @@
 body {
+  background: black;
     margin: 0;
     font-family: Arial, sans-serif;
   }
   
   .app {
     text-align: center;
-    background: black;
     color: white;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
-  
+  .main-page {
+    color: #333;
+  }
   header, footer {
     display: flex;
     justify-content: space-between;
