@@ -1,4 +1,4 @@
-import Home from './component/home.js';
+import Home from './component/Pages/home.js';
 
 const app = Vue.createApp({
     data() {
