@@ -1,0 +1,92 @@
+h2,
+header {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+p {
+    font-size: 14px;
+    color: #bbb;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group .prefix {
+    color: #bbb;
+    margin-right: 10px;
+}
+
+input {
+    background: #333;
+    border: none;
+    color: #fff;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.inline-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.inline-inputs input {
+    flex: 1;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+    margin: 0 5px;
+}
+
+.primary {
+    background: #00d26a;
+    color: #fff;
+    border: none;
+}
+
+.secondary {
+    background: #444;
+    color: #bbb;
+    border: none;
+}
+
+.pin-input-container {
+    margin-bottom: 20px;
+}
+
+.pin-input {
+    width: 150px;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    letter-spacing: 10px;
+    /* To create space between the dots */
+    font-family: monospace;
+    /* To ensure consistent character width */
+}
+
+.pin-input::placeholder {
+    letter-spacing: 0;
+    /* Reset letter spacing for placeholder */
+}
