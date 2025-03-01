@@ -1,16 +1,26 @@
 import DateOfBirthComponent from './dateOfBirth.js';
 
 const template = `
-    <div class="screen">
-        <date-of-birth-component v-if="showDateOfBirth"></date-of-birth-component>
-        <div v-else>
-            <h2>What's your legal name?</h2>
-            <p>This should match the name on your government ID.</p>
-            <p><input type="text" placeholder="Legal first name" /></p>
-            <p><input type="text" placeholder="Legal last name" /></p>
-            <p><button class="primary" @click="submit">Next</button></p>
+<div class="screen">
+    <date-of-birth-component v-if="showDateOfBirth"></date-of-birth-component>
+
+    <div class="main-page" v-else>
+        <h2>What's your legal name?</h2>
+        <p><center>This should match the name on your government ID.</center></p>
+        
+
+        <div class="input-group">
+            <input type="text" id="firstName" placeholder="Legal first name" />
         </div>
-    </div>`;
+
+        <div class="input-group">
+            <input type="text" id="lastName" placeholder="Legal last name" />
+        </div>
+        <div class="button-group">
+            <button class="primary" @click="submit">Submit</button>
+        </div>
+    </div>
+</div>`;
 
 export default {
     template: template,

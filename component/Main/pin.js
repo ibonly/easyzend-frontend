@@ -1,31 +1,36 @@
 import ReferralComponent from './referral.js';
 
 const template = `
- <div class="screen">
+<div class="screen">
     <referral-component v-if="showReferral"></referral-component>
-    <div class="choose-cash-pin-container" v-else>
-        <div class="header">
+
+    <div class="choose-cash-pin-container main-page" v-else>
         <h2>Choose a Cash PIN as a backup for Touch ID</h2>
-        </div>
+
         <div class="pin-input-container">
-        <form>
-            <input
-                type="password"
-                v-model="cashPin"
-                maxlength="4"
-                @input="validatePin"
-                placeholder="••••"
-                class="pin-input"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
-            />
-        <p><button class="primary" @click="submit">Next</button></p>
-        </form>
+            <div class="center-text">
+                <input
+                    type="password"
+                    v-model="cashPin"
+                    maxlength="4"
+                    @input="validatePin"
+                    placeholder="••••"
+                    class="pin-input"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    spellcheck="false"
+                />
+            </div>
+            
+            <div class="button-group">
+                <button class="primary" @click="submit">
+                    Submit
+                </button>
+            </div>
         </div>
     </div>
-  </div>`;
+</div>`;
 
 export default {
     template: template,
