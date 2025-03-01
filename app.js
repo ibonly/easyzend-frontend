@@ -10,7 +10,20 @@ const app = Vue.createApp({
     template: template,
     data() {
         return {
-            showAnotherComponent: false
+            showAnotherComponent: JSON.parse(localStorage.getItem('showAnotherComponent')) || false
+        }
+    },
+    mounted() {
+        window.addEventListener('storage', this.handleStorageChange);
+    },
+    beforeUnmount() {
+        window.removeEventListener('storage', this.handleStorageChange);
+    },
+    methods: {
+        handleStorageChange(event) {
+            if (event.key === 'showAnotherComponent') {
+                this.showAnotherComponent = JSON.parse(event.newValue);
+            }
         }
     },
     components: {

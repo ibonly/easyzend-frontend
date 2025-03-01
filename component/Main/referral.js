@@ -34,6 +34,7 @@ export default {
             // Handle the continue action
             console.log('Continue button clicked');
             this.showHomeComponent = true;
+            localStorage.setItem('showAnotherComponent', JSON.stringify(true));
         }
     }
 };
