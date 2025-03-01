@@ -1,25 +1,34 @@
 import BankDetails from './bankDetails.js';
 
 const template = `
-  <div class="screen">
+<div class="screen">
     <bank-details v-if="showBankDetails"></bank-details>
-    <div v-else>
-        <h2>Enter your phone or email</h2>
+    <div class="main-page" v-else>
+        <h2>Enter Your Phone/Email</h2>
+        
         <div class="input-group" v-if="usePhoneNumber">
-        <span class="prefix">+1</span>
-        <input type="tel" placeholder="Mobile Number" v-model="phoneNumber" />
+            <span class="prefix">+1</span>
+            <input type="tel" placeholder="Mobile Number" v-model="phoneNumber" />
         </div>
+
         <div class="input-group" v-else>
-        <span class="prefix">+1</span>
-        <input type="email" placeholder="email@email.com" v-model="phoneNumber" />
+            <span class="prefix">@</span>
+            <input type="email" placeholder="email@email.com" v-model="phoneNumber" />
         </div>
+
         <div class="button-group">
-        <button class="secondary" v-if="usePhoneNumber" @click="switchToPhoneNumber">Use Email</button>
-        <button class="secondary" @click="switchToEmail" v-else>Use Phone Number</button>
-        <button class="primary" @click="nextStep">Subnmit</button>
+            <button class="secondary" v-if="usePhoneNumber" @click="switchToPhoneNumber">
+                Use Email
+            </button>
+            <button class="secondary" @click="switchToEmail" v-else>
+                Use Phone Number
+            </button>
+            <button class="primary" @click="nextStep">
+                Submit
+            </button>
         </div>
     </div>
-  </div>`;
+</div>`;
 
 export default {
     template: template,

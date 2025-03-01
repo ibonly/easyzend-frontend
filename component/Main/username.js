@@ -1,15 +1,21 @@
 import PinComponent from './pin.js';
 
 const template = `
- <div class="screen">
-        <pin-component v-if="showPinComponent"></pin-component>
-        <div v-else>
-    <h2>Choose a $Cashtag</h2>
-    <p>Your unique name for getting paid by anyone</p>
-    <p><input type="text" placeholder="$Cashtag" /></p>
-    <p><button class="primary" @click="submit">Next</button></p>
+<div class="screen">
+    <pin-component v-if="showPinComponent"></pin-component>
+    <div class="main-page" v-else>
+        <h2>Choose a $Cashtag</h2>
+        <p><center>Your unique name for getting paid by anyone</center></p>
+        
+        <div class="input-group">
+            <input type="text" id="username" placeholder="username" />
+        </div>
+
+        <div class="button-group">
+            <button class="primary" @click="submit">Submit</button>
+        </div>
     </div>
-  </div>`;
+</div>`;
 
 export default {
     template: template,
