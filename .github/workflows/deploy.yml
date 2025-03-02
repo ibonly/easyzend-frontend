@@ -31,7 +31,7 @@ jobs:
         git checkout -b live
         git rm -rf .
         cp -r dist/* .
-        git rm -rf dist
+        git rm -rf dist/
         git rm -rf node_modules
         git add .
         git commit -m 'Deploy to live branch'
