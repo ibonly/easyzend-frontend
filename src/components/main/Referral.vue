@@ -1,6 +1,4 @@
-import HomeComponent from './../Pages/home.js';
-
-const template = `
+<template>
 <div class="screen">
     <home-component v-if="showHomeComponent"></home-component>
     <div class="main-page" v-else>
@@ -15,10 +13,14 @@ const template = `
             <button class="primary" @click="continueAction">Continue</button>
         </div>
     </div>
-</div>`;
+</div>
+</template>
+
+<script>
+import HomeComponent from '../private/Home.vue';
 
 export default {
-    template: template,
+    name: 'BankComponent',
     components: {
         HomeComponent
     },
@@ -37,4 +39,9 @@ export default {
             localStorage.setItem('showAnotherComponent', JSON.stringify(true));
         }
     }
-};
+}
+</script>
+
+<style scoped>
+/* Removed styles moved to global.css */
+</style>

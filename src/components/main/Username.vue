@@ -1,36 +1,35 @@
-import DateOfBirthComponent from './dateOfBirth.js';
+<template>
+    <div class="screen">
+        <pin-component v-if="showPinComponent"></pin-component>
+        <div class="main-page" v-else>
+            <h2>Choose a $Cashtag</h2>
+            <p>
+                <center>Your unique name for getting paid by anyone</center>
+            </p>
 
-const template = `
-<div class="screen">
-    <date-of-birth-component v-if="showDateOfBirth"></date-of-birth-component>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="username" />
+            </div>
 
-    <div class="main-page" v-else>
-        <h2>What's your legal name?</h2>
-        <p><center>This should match the name on your government ID.</center></p>
-        
-
-        <div class="input-group">
-            <input type="text" id="firstName" placeholder="Legal first name" />
-        </div>
-
-        <div class="input-group">
-            <input type="text" id="lastName" placeholder="Legal last name" />
-        </div>
-        <div class="button-group">
-            <button class="primary" @click="submit">Submit</button>
+            <div class="button-group">
+                <button class="primary" @click="submit">Submit</button>
+            </div>
         </div>
     </div>
-</div>`;
+</template>
+
+<script>
+import PinComponent from './Pin.vue';
 
 export default {
-    template: template,
+    name: 'BankComponent',
+    components: {
+        PinComponent
+    },
     data() {
         return {
-            showDateOfBirth: false
+            showPinComponent: false
         };
-    },
-    components: {
-        DateOfBirthComponent
     },
     methods: {
         async submit() {
@@ -47,7 +46,7 @@ export default {
             // if (response.ok) {
             //     console.log('Next step with phone number:', this.phoneNumber);
             // Show userDetails component
-            this.showDateOfBirth = true;
+            this.showPinComponent = true;
             // } else {
             //     console.error('API call failed');
             // }
@@ -56,4 +55,9 @@ export default {
             // }
         }
     }
-};
+}
+</script>
+
+<style scoped>
+/* Removed styles moved to global.css */
+</style>

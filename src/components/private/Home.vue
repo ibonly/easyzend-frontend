@@ -1,19 +1,10 @@
-import HeaderComponent from '../Section/Header.js';
-import KeypadComponent from '../Section/Keypad.js';
-import SettingsComponent from './setting.js';
-import ProfileComponent from './profile.js';
-import TransactionListComponent from './transaction.js';
-import NotificationComponent from './notification.js';
-import SuccessComponent from './success.js';
-
-const template = `
+<template>
   <div class="app">
-    <header-component 
-      @open-scan-page="openScanPage" 
-      @open-notification-page="openNotificationPage">
+    <header-component @open-scan-page="openScanPage" @open-notification-page="openNotificationPage">
     </header-component>
     <main v-if="currentPage === 'home'">
-      <keypad-component :amount="amount" :keys="keys" @press-key="pressKey" @request-money="requestMoney" @pay-money="payMoney"></keypad-component>
+      <keypad-component :amount="amount" :keys="keys" @press-key="pressKey" @request-money="requestMoney"
+        @pay-money="payMoney"></keypad-component>
     </main>
     <main v-if="currentPage === 'scan'">
       <transaction-list-component :transactions="transactions"></transaction-list-component>
@@ -35,18 +26,25 @@ const template = `
       <a href="#profile" @click="changePage('profile')"><i class="fa-solid fa-user white-icon"></i></a>
     </footer>
   </div>
-`;
+</template>>
+
+<script>
+import HeaderComponent from './Section/Header.vue';
+import KeypadComponent from './Section/Keypad.vue';
+import TransactionListComponent from './Pages/Transaction.vue';
+import SettingsComponent from './Pages/Settings.vue';
+import ProfileComponent from './Pages/Profile.vue';
+import NotificationComponent from './Pages/Notification.vue';
 
 export default {
-  template: template,
+  name: 'HomeComponent',
   components: {
     HeaderComponent,
     KeypadComponent,
     TransactionListComponent,
     SettingsComponent,
     ProfileComponent,
-    NotificationComponent,
-    SuccessComponent
+    NotificationComponent
   },
   data() {
     return {
@@ -85,4 +83,6 @@ export default {
       this.changePage('notification');
     }
   }
-};
+
+}
+</script>

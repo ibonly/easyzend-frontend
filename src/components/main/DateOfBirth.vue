@@ -1,25 +1,27 @@
-import UsernameComponent from './username.js';
+<template>
+    <div class="screen">
+        <username-component v-if="showUsername"></username-component>
 
-const template = `
-<div class="screen">
-    <username-component v-if="showUsername"></username-component>
+        <div class="main-page" v-else>
+            <h2>What's your date of birth?</h2>
+            <p class="center-text">Incorrect date of birth will impact access to most features on Cash App.</p>
 
-    <div class="main-page" v-else>
-        <h2>What's your date of birth?</h2>
-        <p class="center-text">Incorrect date of birth will impact access to most features on Cash App.</p>
+            <div class="input-group">
+                <input type="date" id="dateOfBirth" placeholder="DD/MM/YYYY" />
+            </div>
 
-        <div class="input-group">
-            <input type="date" id="dateOfBirth" placeholder="DD/MM/YYYY" />
-        </div>
-
-        <div class="button-group">
-            <button class="primary" @click="submit">Submit</button>
+            <div class="button-group">
+                <button class="primary" @click="submit">Submit</button>
+            </div>
         </div>
     </div>
-</div>`;
+</template>
+
+<script>
+import UsernameComponent from './Username.vue';
 
 export default {
-    template: template,
+    name: 'BankComponent',
     data() {
         return {
             showUsername: false
@@ -64,4 +66,9 @@ export default {
             return age >= 16;
         }
     }
-};
+}
+</script>
+
+<style scoped>
+/* Removed styles moved to global.css */
+</style>

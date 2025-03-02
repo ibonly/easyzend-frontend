@@ -1,4 +1,5 @@
-const template = `
+
+<template>
       <div>
     <div v-if="showConfirmation">
       <!-- Payment Confirmation UI -->
@@ -24,11 +25,11 @@ const template = `
       </div>
     </div>
   </div>
-    `;
-
+</template>
+<script>
 export default {
     props: ['transactions'],
-    template: template,
+    name: 'ProfileComponent',
     data() {
       return {
         showPayment: true,
@@ -51,4 +52,4 @@ export default {
       }
     }
   };
-  
+</script>

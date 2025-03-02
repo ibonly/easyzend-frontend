@@ -15,7 +15,7 @@ body {
   .main-page {
     color: #333;
   }
-  header, footer {
+  .header, footer {
     display: flex;
     justify-content: space-between;
     padding: 10px;

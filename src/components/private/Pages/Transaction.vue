@@ -1,7 +1,5 @@
-export default {
-    props: ['transactions'],
-    template: `
-      <div class="scan-page">
+<template>
+    <div class="scan-page">
         <h2>Activity</h2>
         <input type="text" placeholder="Search Transactions" class="search-bar" />
         <div class="transaction-list">
@@ -15,5 +13,11 @@ export default {
           </div>
         </div>
       </div>
-    `
-  };
+</template>
+
+<script>
+export default {
+    props: ['transactions'],
+    name: 'SuccessComponent',
+};
+</script>
