@@ -1,16 +1,16 @@
 <template>
-  <HomeComponent v-if="showAnotherComponent" msg="Welcome to Your Vue.js App"/>
+  <MainComponent v-if="showAnotherComponent" msg="Welcome to Your Vue.js App"/>
   <LoginComponent msg="Welcome to Login Vue.js App" v-else/>
 </template>
 
 <script>
 import LoginComponent from './components/main/Login.vue'
-import HomeComponent from './components/private/Home.vue'
+import MainComponent from './components/private/Main.vue'
 
 export default {
   name: 'App',
   components: {
-    HomeComponent,
+    MainComponent,
     LoginComponent
   },
   data: () => {

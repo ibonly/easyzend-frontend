@@ -18,6 +18,6 @@
 <script>
 export default {
     props: ['transactions'],
-    name: 'SuccessComponent',
+    name: 'TransactionListComponent',
 };
 </script>
