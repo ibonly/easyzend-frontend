@@ -1,31 +1,41 @@
-<template>
-    <div class="success-page">
-        <h2>Successful transaction</h2>
-        <div v-for="contact in contacts" :key="contact.id" class="contact-item">
-            <span>{{ contact.name }}</span>
-            <span>{{ amount }}</span>
-        </div>
-    </div>
-</template>
 
+<template>
+      <div>
+    <div>
+      <!-- Payment Confirmation UI -->
+      <h2>Payment Confirmation</h2>
+      <p>Payment to {{ recipient }}</p>
+      <h1>$ {{ amount }}</h1>
+      <p>For {{ reason }}</p>
+      <p>{{ timestamp }}</p>
+      <button @click="goBack">Done</button>
+    </div>
+  </div>
+</template>
 <script>
 export default {
+    props: ['transactions'],
     name: 'SuccessComponent',
-    props: ['amount', 'contacts']
-};
+    data() {
+      return {
+        showPayment: true,
+        showConfirmation: false,
+        recipient: 'AbellaAbella',
+        amount: 500.00,
+        reason: 'BILLS ❤️',
+        timestamp: 'Today at 1:57 PM'
+      };
+    },
+    methods: {
+      toggleWallet() {
+        this.showPayment = !this.showPayment;
+      },
+      confirmPayment() {
+        this.showConfirmation = true;
+      },
+      goBack() {
+        this.showConfirmation = false;
+      }
+    }
+  };
 </script>
-
-<style scoped>
-.success-page {
-    text-align: center;
-    margin-top: 20px;
-}
-.contact-item {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-</style>

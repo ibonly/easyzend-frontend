@@ -1,6 +1,5 @@
 <template>
   <div class="app">
-    <header-component @open-scan-page="openScanPage" @open-notification-page="openNotificationPage" />
     <contact-component @update-contacts="updateContacts" v-if="showBreadcrumbs" />
     <div class="breadcrumbs" v-if="showBreadcrumbs">
       <span v-for="contact in selectedContacts" :key="contact.id" class="breadcrumb" @click="editContacts">{{ contact.name }}</span>
@@ -29,39 +28,30 @@
       <notification-component></notification-component>
     </main>
     <main v-if="currentPage === 'success'">
-      <success-component :amount="amount" :contacts="selectedContacts"></success-component>
+      <process-component :amount="amount" :contacts="selectedContacts"></process-component>
     </main>
-    <footer>
-      <a href="#home" @click="changePage('home')"><i class="fa-solid fa-house white-icon"></i></a>
-      <a href="#scan" @click="changePage('scan')"><i class="fa-solid fa-chart-line white-icon"></i></a>
-      <a href="#money">💰</a>
-      <a href="#search" @click="changePage('settings')"><i class="fa-solid fa-gear white-icon"></i></a>
-      <a href="#profile" @click="changePage('profile')"><i class="fa-solid fa-user white-icon"></i></a>
-    </footer>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './Section/Header.vue';
 import KeypadComponent from './Section/Keypad.vue';
 import ContactComponent from './Section/Contact.vue';
 import TransactionListComponent from './Pages/Transaction.vue';
 import SettingsComponent from './Pages/Settings.vue';
-import ProfileComponent from './Pages/Profile.vue';
+import ProfileComponent from './Pages/Success.vue';
 import NotificationComponent from './Pages/Notification.vue';
-import SuccessComponent from './Pages/Success.vue';
+import ProcessComponent from './Pages/Precess.vue';
 
 export default {
   name: 'HomeComponent',
   components: {
-    HeaderComponent,
     KeypadComponent,
     ContactComponent,
     ProfileComponent,
     SettingsComponent,
     NotificationComponent,
     TransactionListComponent,
-    SuccessComponent
+    ProcessComponent
   },
   data() {
     return {
