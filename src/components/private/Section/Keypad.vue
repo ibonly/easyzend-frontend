@@ -1,12 +1,12 @@
 <template>
-  <div>
-    <h1>$ {{ amount }}</h1>
+  <div class="keypadLayout">
+    <div :class="amount.length >= 6 ? 'small-font' : 'big-font'">&#8358;{{ amount }}</div>
     <div class="keypad">
-      <button v-for="key in keys" :key="key" @click="pressKey(key, $event)">{{ key }}</button>
+      <button v-for="key in keys" :key="key" @click="pressKey(key, $event)" class="buttonPressed">{{ key }}</button>
     </div>
     <div class="actions">
-      <button @click="$emit('request-money')">Request</button>
-      <button @click="$emit('pay-money')">Pay</button>
+      <button @click="$emit('request-money')" class="primary">Request</button>
+      <button @click="$emit('pay-money')" class="primary">Pay</button>
     </div>
   </div>
 </template>
@@ -19,6 +19,8 @@ export default {
     pressKey(key, event) {
       this.$emit('press-key', key);
       this.changeButtonBackground(event.target);
+
+      console.log(this.amount);
     },
     changeButtonBackground(button) {
       button.style.backgroundColor = 'darkgray';
@@ -29,3 +31,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.big-font {
+  font-size: 40px;
+}
+.small-font {
+  font-size: 40px;
+}
+</style>

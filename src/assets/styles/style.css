@@ -1,117 +1,142 @@
 body {
   background: black;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .app {
-    text-align: center;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .main-page {
-    color: #333;
-  }
-  .header, footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-  }
-  
+  margin: 0px auto;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  text-align: center;
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.keypadLayout h1 {
+  font-size: 80px;
+}
+
+.keypadLayout {
+  margin-bottom: -100px;
+}
+.main-page {
+  color: #333;
+}
+
+.header,
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px;
+}
+
+button {
+  border: none;
+  padding: 15px;
+  font-size: 40px;
+  cursor: pointer;
+  transition: background 0.3s;
+  background-color: #000;
+  color: #fff;
+}
+
+.buttonPressed {
+  background: rgb(0, 0, 0) !important;
+}
+
+.actions {
+  justify-content: space-around;
+  padding: 20px;
+}
+
+a {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.scan-page {
+  padding: 20px;
+  text-align: left;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.white-icon {
+  color: white;
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.primary {
+  width: 45%;
+  margin: 5px;
+}
+
+.location {
+  color: cyan;
+}
+
+.location-red {
+  color: red;
+}
+
+.amazon {
+  color: orange;
+}
+
+/* Mobile formatting */
+@media (max-width: 600px) {
   .keypad {
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 20px;
+    gap: 5px;
+    margin: 10px;
   }
-  
+
   button {
-    background: gray;
-    border: none;
-    padding: 15px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
+    padding: 10px;
+    font-size: 16px;
   }
-  
-  button:active {
-    background: darkgray;
-  }
-  
+
   .actions {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  a {
-    font-size: 24px;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .scan-page {
-    padding: 20px;
-    text-align: left;
-  }
-  
-  .search-bar {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background: #333;
-    color: white;
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .transaction-list {
-    display: flex;
     flex-direction: column;
-  }
-  
-  .transaction {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 10px;
-    border-bottom: 1px solid #444;
   }
-  .white-icon {
-    color: white;
+
+  a {
+    font-size: 20px;
   }
-  .icon {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .location { color: cyan; }
-  .location-red { color: red; }
-  .amazon { color: orange; }
-  
-  /* Mobile formatting */
-  @media (max-width: 600px) {
-    .keypad {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
-      margin: 10px;
-    }
-  
-    button {
-      padding: 10px;
-      font-size: 16px;
-    }
-  
-    .actions {
-      flex-direction: column;
-      padding: 10px;
-    }
-  
-    a {
-      font-size: 20px;
-    }
-  }
+}
